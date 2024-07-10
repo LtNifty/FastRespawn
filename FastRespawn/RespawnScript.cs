@@ -3,7 +3,7 @@ using System.Collections;
 using ThunderRoad;
 using UnityEngine;
 
-namespace FastRespawn
+namespace BetterRespawn
 {
     public class RespawnScript : ThunderScript
     {
@@ -34,33 +34,36 @@ namespace FastRespawn
             _deathBehavior = action;
         }
 
+        [ModOptionSlider]
         [ModOption(
             name: "Slow Time Duration", 
             tooltip: "Determines how long to be in slow time after you die in seconds.", 
             valueSourceName = nameof(ZeroToTenInTenths), 
-            defaultValueIndex = 3, 
+            defaultValueIndex = 10, 
             order = 1)]
         public static void SlowTimeDuration(float slowTimeDuration)
         {
             _deathSlowTimeDuration = slowTimeDuration;
         }
 
+        [ModOptionSlider]
         [ModOption(
             name: "Normal Time Duration",
             tooltip: "Determines how long to be in normal time after you die.",
             valueSourceName = nameof(ZeroToTenInTenths),
-            defaultValueIndex = 0,
+            defaultValueIndex = 10,
             order = 2)]
         public static void NormalTimeDuration(float normalTimeDuration)
         {
             _deathNormalTimeDuration = normalTimeDuration;
         }
 
+        [ModOptionSlider]
         [ModOption(
             name: "Fade Time Duration",
             tooltip: "Determines how long it takes for the screen to fade after you die.",
             valueSourceName = nameof(ZeroToTenInTenths),
-            defaultValueIndex = 0,
+            defaultValueIndex = 10,
             order = 3)]
         public static void FadeTimeDuration(float fadeTimeDuration)
         {
